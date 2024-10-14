@@ -1,0 +1,18 @@
+# Byte-compiled
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Vagrant files
+.vagrant/
+
+# P4 dirs
+build/
+logs/
+pcaps/
+
+# Solution
+solution/
+
+# MacOS files
+.DS_Store
