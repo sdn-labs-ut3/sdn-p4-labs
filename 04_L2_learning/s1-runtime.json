@@ -1,0 +1,41 @@
+{
+  "target": "bmv2",
+  "p4info": "build/l2_learning.p4.p4info.txt",
+  "bmv2_json": "build/l2_learning.json",
+  "multicast_group_entries": [
+    {
+      "multicast_group_id": 1,
+      "replicas": [
+        {"egress_port": 2, "instance": 1},
+        {"egress_port": 3, "instance": 1},
+        {"egress_port": 4, "instance": 1} ]
+    },
+    {
+      "multicast_group_id": 2,
+      "replicas": [
+        {"egress_port": 1, "instance": 1},
+        {"egress_port": 3, "instance": 1},
+        {"egress_port": 4, "instance": 1} ]
+    },
+    {
+      "multicast_group_id": 3,
+      "replicas": [
+        {"egress_port": 1, "instance": 1},
+        {"egress_port": 2, "instance": 1},
+        {"egress_port": 4, "instance": 1} ]
+    },
+    {
+      "multicast_group_id": 4,
+      "replicas": [
+        {"egress_port": 1, "instance": 1},
+        {"egress_port": 2, "instance": 1},
+        {"egress_port": 3, "instance": 1} ]
+    }                    
+  ],
+  "clone_session_entries": [
+    {
+      "clone_session_id": 100,
+      "replicas": [ {"egress_port": 255, "instance": 1} ]
+    }
+  ]
+}
