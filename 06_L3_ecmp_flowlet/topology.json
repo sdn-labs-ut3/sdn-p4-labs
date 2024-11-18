@@ -1,0 +1,28 @@
+{
+    "hosts": {
+        "h1": {"ip": "10.10.10.1/24", "mac": "08:00:00:00:01:11",
+                "commands": [
+                    "ip r add default via 10.10.10.254 dev eth0",
+                    "ip nei add 10.10.10.254 lladdr 00:00:00:01:01:01 dev eth0" ]
+            },
+        "h2": {"ip": "10.20.20.2/24", "mac": "08:00:00:00:02:22",
+                "commands": [
+                    "ip r add default via 10.20.20.254 dev eth0",
+                    "ip nei add 10.20.20.254 lladdr 00:00:00:02:02:02 dev eth0" ]    
+            }
+    },
+    "switches": {
+        "s1": { "runtime_json" : "s1-runtime.json" },
+        "s2": { "runtime_json" : "s2-runtime.json" },
+        "s10": { "runtime_json" : "sw-core-runtime.json" },
+        "s11": { "runtime_json" : "sw-core-runtime.json" },
+        "s12": { "runtime_json" : "sw-core-runtime.json" },
+        "s13": { "runtime_json" : "sw-core-runtime.json" }
+    },
+    "links": [
+        ["h1", "s1-p1"],
+        ["s1-p2", "s10-p1"], ["s1-p3", "s11-p1"], ["s1-p4", "s12-p1"], ["s1-p5", "s13-p1"],
+        ["s2-p2", "s10-p2"], ["s2-p3", "s11-p2"], ["s2-p4", "s12-p2"], ["s2-p5", "s13-p2"],
+        ["h2", "s2-p1"]
+    ]
+}
